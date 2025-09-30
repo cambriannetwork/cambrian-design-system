@@ -13,7 +13,6 @@
     "@heroui/react": "^2.8.4",
     "@tailwindcss/vite": "^4.1.13",
     "cambrian-ds": "^2.1.1",
-    "cambrian-ds-monorepo": "github:nomativ/cambrian-ds",
     "clsx": "^2.1.1",
     "framer-motion": "^12.23.22",
     "next-themes": "^0.4.6",
