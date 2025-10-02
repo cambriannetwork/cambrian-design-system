@@ -1,12 +1,47 @@
 import { useState } from 'react'
-import { Button, Card, CardBody, CardHeader } from 'cambrian-ds'
+import {
+  Accordion, AccordionItem,
+  Alert,
+  Avatar,
+  Badge,
+  Breadcrumb, BreadcrumbItem,
+  Button,
+  Card, CardBody, CardHeader,
+  Checkbox,
+  Chip,
+  Code,
+  DatePicker,
+  Divider,
+  Input,
+  Kbd,
+  Link,
+  Modal, ModalContent, ModalHeader, ModalBody, ModalFooter,
+  Pagination,
+  Progress,
+  Radio, RadioGroup,
+  Select, SelectItem,
+  Skeleton,
+  Slider,
+  Spacer,
+  Spinner,
+  Switch,
+  Table, TableHeader, TableColumn, TableBody, TableRow, TableCell,
+  Tabs, Tab,
+  Textarea,
+  Tooltip,
+  User
+} from 'cambrian-ds'
 
 function App() {
   const [count, setCount] = useState(0)
+  const [isModalOpen, setIsModalOpen] = useState(false)
+  const [sliderValue, setSliderValue] = useState(50)
+  const [switchValue, setSwitchValue] = useState(false)
 
   return (
     <div className="p-8 max-w-6xl mx-auto">
       <h1 className="text-4xl font-bold text-center mb-12">Cambrian Design System Showcase</h1>
+      <p className="text-center text-lg mb-12 opacity-70">Complete catalog of all 40 components</p>
 
       {/* Buttons Section */}
       <Card className="mb-8">
@@ -20,10 +55,435 @@ function App() {
               <div className="flex gap-3 flex-wrap">
                 <Button variant="primary">Primary Button</Button>
                 <Button variant="secondary">Secondary Button</Button>
+                <Button variant="tertiary">Tertiary Button</Button>
+                <Button variant="danger">Danger Button</Button>
+                <Button variant="success">Success Button</Button>
+                <Button variant="primary" size="sm">Small</Button>
+                <Button variant="primary" size="lg">Large</Button>
+                <Button variant="primary" isDisabled>Disabled</Button>
+                <Button variant="primary" isLoading>Loading</Button>
                 <Button variant="primary" onClick={() => setCount(count + 1)}>
                   Count: {count}
                 </Button>
               </div>
+            </div>
+          </div>
+        </CardBody>
+      </Card>
+
+      {/* Form Inputs Section */}
+      <Card className="mb-8">
+        <CardHeader>
+          <h2 className="text-2xl font-semibold">Form Inputs</h2>
+        </CardHeader>
+        <CardBody>
+          <div className="space-y-6">
+            <div>
+              <h3 className="text-lg font-medium mb-3">Input</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <Input label="Default Input" placeholder="Enter text..." />
+                <Input label="Disabled Input" placeholder="Disabled" isDisabled />
+                <Input label="With Description" placeholder="Enter email" description="We'll never share your email" />
+                <Input label="Error State" placeholder="Invalid input" isInvalid errorMessage="This field is required" />
+              </div>
+            </div>
+
+            <Divider />
+
+            <div>
+              <h3 className="text-lg font-medium mb-3">Textarea</h3>
+              <Textarea label="Description" placeholder="Enter your description..." />
+            </div>
+
+            <Divider />
+
+            <div>
+              <h3 className="text-lg font-medium mb-3">Select</h3>
+              <Select label="Choose an option" placeholder="Select...">
+                <SelectItem key="option1">Option 1</SelectItem>
+                <SelectItem key="option2">Option 2</SelectItem>
+                <SelectItem key="option3">Option 3</SelectItem>
+              </Select>
+            </div>
+
+            <Divider />
+
+            <div>
+              <h3 className="text-lg font-medium mb-3">Checkbox</h3>
+              <div className="flex flex-col gap-2">
+                <Checkbox defaultSelected>I agree to the terms</Checkbox>
+                <Checkbox>Subscribe to newsletter</Checkbox>
+                <Checkbox isDisabled>Disabled option</Checkbox>
+              </div>
+            </div>
+
+            <Divider />
+
+            <div>
+              <h3 className="text-lg font-medium mb-3">Radio Group</h3>
+              <RadioGroup label="Select your favorite" defaultValue="option1">
+                <Radio value="option1">Option 1</Radio>
+                <Radio value="option2">Option 2</Radio>
+                <Radio value="option3">Option 3</Radio>
+              </RadioGroup>
+            </div>
+
+            <Divider />
+
+            <div>
+              <h3 className="text-lg font-medium mb-3">Switch</h3>
+              <Switch isSelected={switchValue} onValueChange={setSwitchValue}>
+                Enable notifications
+              </Switch>
+            </div>
+
+            <Divider />
+
+            <div>
+              <h3 className="text-lg font-medium mb-3">Slider</h3>
+              <Slider
+                label="Volume"
+                value={sliderValue}
+                onChange={(value) => setSliderValue(Array.isArray(value) ? value[0] : value)}
+                minValue={0}
+                maxValue={100}
+                className="max-w-md"
+              />
+              <p className="text-sm mt-2 opacity-70">Value: {sliderValue}</p>
+            </div>
+
+            <Divider />
+
+            <div>
+              <h3 className="text-lg font-medium mb-3">DatePicker</h3>
+              <DatePicker label="Select date" />
+            </div>
+          </div>
+        </CardBody>
+      </Card>
+
+      {/* Data Display Section */}
+      <Card className="mb-8">
+        <CardHeader>
+          <h2 className="text-2xl font-semibold">Data Display</h2>
+        </CardHeader>
+        <CardBody>
+          <div className="space-y-6">
+            <div>
+              <h3 className="text-lg font-medium mb-3">Avatar</h3>
+              <div className="flex gap-3 items-center">
+                <Avatar src="https://i.pravatar.cc/150?u=a042581f4e29026024d" />
+                <Avatar name="John Doe" />
+                <Avatar name="JD" size="sm" />
+                <Avatar name="JD" size="lg" />
+              </div>
+            </div>
+
+            <Divider />
+
+            <div>
+              <h3 className="text-lg font-medium mb-3">User</h3>
+              <User
+                name="Jane Doe"
+                description="Product Designer"
+                avatarProps={{ src: "https://i.pravatar.cc/150?u=a042581f4e29026704d" }}
+              />
+            </div>
+
+            <Divider />
+
+            <div>
+              <h3 className="text-lg font-medium mb-3">Badge</h3>
+              <div className="flex gap-3 flex-wrap">
+                <Badge content="5" color="primary">
+                  <Button variant="primary">Notifications</Button>
+                </Badge>
+                <Badge content="99+" color="danger">
+                  <Button variant="secondary">Messages</Button>
+                </Badge>
+                <Badge content="" color="success" shape="circle">
+                  <Avatar name="JD" />
+                </Badge>
+              </div>
+            </div>
+
+            <Divider />
+
+            <div>
+              <h3 className="text-lg font-medium mb-3">Chip</h3>
+              <div className="flex gap-2 flex-wrap">
+                <Chip>Default</Chip>
+                <Chip color="primary">Primary</Chip>
+                <Chip color="secondary">Secondary</Chip>
+                <Chip color="success">Success</Chip>
+                <Chip color="warning">Warning</Chip>
+                <Chip color="danger">Danger</Chip>
+                <Chip variant="bordered">Bordered</Chip>
+                <Chip onClose={() => {}}>Closeable</Chip>
+              </div>
+            </div>
+
+            <Divider />
+
+            <div>
+              <h3 className="text-lg font-medium mb-3">Code & Kbd</h3>
+              <div className="space-y-3">
+                <Code>npm install cambrian-ds</Code>
+                <div className="flex gap-2 items-center">
+                  <span>Press</span>
+                  <Kbd>Ctrl</Kbd>
+                  <span>+</span>
+                  <Kbd>C</Kbd>
+                  <span>to copy</span>
+                </div>
+              </div>
+            </div>
+
+            <Divider />
+
+            <div>
+              <h3 className="text-lg font-medium mb-3">Table</h3>
+              <Table aria-label="Example table">
+                <TableHeader>
+                  <TableColumn>NAME</TableColumn>
+                  <TableColumn>ROLE</TableColumn>
+                  <TableColumn>STATUS</TableColumn>
+                </TableHeader>
+                <TableBody>
+                  <TableRow key="1">
+                    <TableCell>Tony Reichert</TableCell>
+                    <TableCell>CEO</TableCell>
+                    <TableCell>Active</TableCell>
+                  </TableRow>
+                  <TableRow key="2">
+                    <TableCell>Zoey Lang</TableCell>
+                    <TableCell>Technical Lead</TableCell>
+                    <TableCell>Paused</TableCell>
+                  </TableRow>
+                  <TableRow key="3">
+                    <TableCell>Jane Fisher</TableCell>
+                    <TableCell>Senior Developer</TableCell>
+                    <TableCell>Active</TableCell>
+                  </TableRow>
+                </TableBody>
+              </Table>
+            </div>
+          </div>
+        </CardBody>
+      </Card>
+
+      {/* Feedback Components */}
+      <Card className="mb-8">
+        <CardHeader>
+          <h2 className="text-2xl font-semibold">Feedback</h2>
+        </CardHeader>
+        <CardBody>
+          <div className="space-y-6">
+            <div>
+              <h3 className="text-lg font-medium mb-3">Alert</h3>
+              <div className="space-y-3">
+                <Alert color="primary" title="Info">This is an informational message</Alert>
+                <Alert color="success" title="Success">Your action was successful</Alert>
+                <Alert color="warning" title="Warning">Please review this warning</Alert>
+                <Alert color="danger" title="Error">An error has occurred</Alert>
+              </div>
+            </div>
+
+            <Divider />
+
+            <div>
+              <h3 className="text-lg font-medium mb-3">Progress</h3>
+              <div className="space-y-4">
+                <Progress value={30} color="primary" showValueLabel label="Loading..." />
+                <Progress value={60} color="success" />
+                <Progress value={90} color="warning" />
+                <Progress isIndeterminate color="primary" label="Processing..." />
+              </div>
+            </div>
+
+            <Divider />
+
+            <div>
+              <h3 className="text-lg font-medium mb-3">Spinner</h3>
+              <div className="flex gap-4 items-center">
+                <Spinner />
+                <Spinner color="primary" />
+                <Spinner color="success" />
+                <Spinner size="lg" />
+              </div>
+            </div>
+
+            <Divider />
+
+            <div>
+              <h3 className="text-lg font-medium mb-3">Skeleton</h3>
+              <div className="space-y-3">
+                <Skeleton className="rounded-lg">
+                  <div className="h-24 rounded-lg bg-default-300"></div>
+                </Skeleton>
+                <div className="space-y-3">
+                  <Skeleton className="w-3/5 rounded-lg">
+                    <div className="h-3 w-3/5 rounded-lg bg-default-200"></div>
+                  </Skeleton>
+                  <Skeleton className="w-4/5 rounded-lg">
+                    <div className="h-3 w-4/5 rounded-lg bg-default-200"></div>
+                  </Skeleton>
+                </div>
+              </div>
+            </div>
+
+            <Divider />
+
+            <div>
+              <h3 className="text-lg font-medium mb-3">Tooltip</h3>
+              <div className="flex gap-3">
+                <Tooltip content="This is a tooltip">
+                  <Button variant="secondary">Hover me</Button>
+                </Tooltip>
+                <Tooltip content="Tooltip on top" placement="top">
+                  <Button variant="secondary">Top</Button>
+                </Tooltip>
+                <Tooltip content="Tooltip on right" placement="right">
+                  <Button variant="secondary">Right</Button>
+                </Tooltip>
+              </div>
+            </div>
+          </div>
+        </CardBody>
+      </Card>
+
+      {/* Navigation & Layout */}
+      <Card className="mb-8">
+        <CardHeader>
+          <h2 className="text-2xl font-semibold">Navigation & Layout</h2>
+        </CardHeader>
+        <CardBody>
+          <div className="space-y-6">
+            <div>
+              <h3 className="text-lg font-medium mb-3">Breadcrumb</h3>
+              <Breadcrumb>
+                <BreadcrumbItem>Home</BreadcrumbItem>
+                <BreadcrumbItem>Components</BreadcrumbItem>
+                <BreadcrumbItem>Breadcrumb</BreadcrumbItem>
+              </Breadcrumb>
+            </div>
+
+            <Divider />
+
+            <div>
+              <h3 className="text-lg font-medium mb-3">Link</h3>
+              <div className="flex gap-4">
+                <Link href="#">Default Link</Link>
+                <Link href="#" color="primary">Primary Link</Link>
+                <Link href="#" color="secondary">Secondary Link</Link>
+                <Link href="#" isExternal>External Link</Link>
+              </div>
+            </div>
+
+            <Divider />
+
+            <div>
+              <h3 className="text-lg font-medium mb-3">Tabs</h3>
+              <Tabs aria-label="Options">
+                <Tab key="photos" title="Photos">
+                  <Card>
+                    <CardBody>Photos content</CardBody>
+                  </Card>
+                </Tab>
+                <Tab key="music" title="Music">
+                  <Card>
+                    <CardBody>Music content</CardBody>
+                  </Card>
+                </Tab>
+                <Tab key="videos" title="Videos">
+                  <Card>
+                    <CardBody>Videos content</CardBody>
+                  </Card>
+                </Tab>
+              </Tabs>
+            </div>
+
+            <Divider />
+
+            <div>
+              <h3 className="text-lg font-medium mb-3">Pagination</h3>
+              <Pagination total={10} initialPage={1} />
+            </div>
+
+            <Divider />
+
+            <div>
+              <h3 className="text-lg font-medium mb-3">Divider</h3>
+              <div className="space-y-4">
+                <div>
+                  <p>Content above</p>
+                  <Divider className="my-4" />
+                  <p>Content below</p>
+                </div>
+              </div>
+            </div>
+
+            <Divider />
+
+            <div>
+              <h3 className="text-lg font-medium mb-3">Spacer</h3>
+              <Card>
+                <CardBody>
+                  <p>Item 1</p>
+                  <Spacer y={4} />
+                  <p>Item 2 (with spacer above)</p>
+                </CardBody>
+              </Card>
+            </div>
+          </div>
+        </CardBody>
+      </Card>
+
+      {/* Interactive Components */}
+      <Card className="mb-8">
+        <CardHeader>
+          <h2 className="text-2xl font-semibold">Interactive Components</h2>
+        </CardHeader>
+        <CardBody>
+          <div className="space-y-6">
+            <div>
+              <h3 className="text-lg font-medium mb-3">Accordion</h3>
+              <Accordion>
+                <AccordionItem key="1" aria-label="Accordion 1" title="What is Cambrian DS?">
+                  Cambrian DS is a comprehensive design system built for modern web applications.
+                </AccordionItem>
+                <AccordionItem key="2" aria-label="Accordion 2" title="How do I install it?">
+                  Simply run: npm install cambrian-ds
+                </AccordionItem>
+                <AccordionItem key="3" aria-label="Accordion 3" title="Is it customizable?">
+                  Yes, all components are highly customizable with Tailwind CSS.
+                </AccordionItem>
+              </Accordion>
+            </div>
+
+            <Divider />
+
+            <div>
+              <h3 className="text-lg font-medium mb-3">Modal</h3>
+              <Button variant="primary" onPress={() => setIsModalOpen(true)}>
+                Open Modal
+              </Button>
+              <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
+                <ModalContent>
+                  <ModalHeader>Modal Title</ModalHeader>
+                  <ModalBody>
+                    <p>This is the modal content. You can put any content here.</p>
+                  </ModalBody>
+                  <ModalFooter>
+                    <Button variant="secondary" onPress={() => setIsModalOpen(false)}>
+                      Close
+                    </Button>
+                    <Button variant="primary" onPress={() => setIsModalOpen(false)}>
+                      Action
+                    </Button>
+                  </ModalFooter>
+                </ModalContent>
+              </Modal>
             </div>
           </div>
         </CardBody>
