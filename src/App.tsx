@@ -282,10 +282,30 @@ function App() {
             <div>
               <h3 className="text-lg font-medium mb-3">Alert</h3>
               <div className="space-y-3">
-                <Alert color="primary" title="Info">This is an informational message</Alert>
-                <Alert color="success" title="Success">Your action was successful</Alert>
-                <Alert color="warning" title="Warning">Please review this warning</Alert>
-                <Alert color="danger" title="Error">An error has occurred</Alert>
+                <Alert variant="info">
+                  <div>
+                    <h4 className="font-semibold mb-1">Info</h4>
+                    <p>This is an informational message</p>
+                  </div>
+                </Alert>
+                <Alert variant="success">
+                  <div>
+                    <h4 className="font-semibold mb-1">Success</h4>
+                    <p>Your action was successful</p>
+                  </div>
+                </Alert>
+                <Alert variant="warning">
+                  <div>
+                    <h4 className="font-semibold mb-1">Warning</h4>
+                    <p>Please review this warning</p>
+                  </div>
+                </Alert>
+                <Alert variant="error">
+                  <div>
+                    <h4 className="font-semibold mb-1">Error</h4>
+                    <p>An error has occurred</p>
+                  </div>
+                </Alert>
               </div>
             </div>
 
