@@ -1,0 +1,22 @@
+/* Notice. The warning strip and its quiet variant. */
+
+.cds-notice button {
+  text-decoration: underline;
+  margin-left: 12px;
+}
+
+.cds-notice {
+  color: var(--cds-notice-ink);
+  background: var(--cds-notice-bg);
+  border: 1px solid var(--cds-notice-line);
+  border-radius: var(--cds-radius);
+  font-size: 13px;
+  padding: 10px 14px;
+  margin-bottom: 14px;
+}
+
+.cds-notice--quiet {
+  border-color: var(--cds-line-strong);
+  background: var(--cds-surface);
+  color: var(--cds-ink-soft);
+}

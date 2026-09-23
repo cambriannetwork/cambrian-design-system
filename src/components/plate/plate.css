@@ -1,0 +1,77 @@
+/* Plate. The framed result panel: running head, intro and the bar above a table. */
+
+@media (max-width: 600px) {
+  .cds-plate__bar {
+    padding: 16px;
+    gap: 12px;
+    font-size: 13px;
+  }
+  .cds-plate__bar span:last-child {
+    font-size: 11px;
+  }
+}
+
+.cds-plate__bar span:last-child,
+.cds-plate__head {
+  font-family: var(--cds-font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.cds-plate {
+  overflow: hidden;
+  border: 1px solid var(--cds-line-strong);
+  border-radius: var(--cds-radius-plate);
+  background: var(--cds-surface);
+  box-shadow: none;
+}
+
+.cds-plate__head {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 9px 20px;
+  border-bottom: 1px solid var(--cds-line);
+  color: var(--cds-ink-muted);
+}
+
+.cds-plate__head span:last-child {
+  font-variant-numeric: tabular-nums;
+}
+
+.cds-plate__intro {
+  border-bottom: 1px solid var(--cds-line);
+  padding: 14px 20px;
+}
+
+.cds-plate__intro p {
+  max-width: 78ch;
+  font-size: 13.5px;
+  color: var(--cds-ink-soft);
+}
+
+.cds-plate__intro > span {
+  color: var(--cds-ink-faint);
+  display: block;
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+.cds-plate__bar {
+  border-bottom: 1px solid var(--cds-line);
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+  padding: 12px 20px;
+  font-size: 13px;
+}
+
+.cds-plate__bar span:first-child {
+  font-weight: 600;
+}
+
+.cds-plate__bar span:last-child {
+  color: var(--cds-ink-muted);
+}

@@ -1,0 +1,184 @@
+/* Table. Data table, sortable headers, the highlighted column and the
+   sideways scroll region. Responsive column rules live here too. */
+
+.cds-table {
+  width: 100%;
+  min-width: 1110px;
+  border-collapse: collapse;
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+}
+
+.cds-table thead th span {
+  display: block;
+  color: var(--cds-ink-faint);
+  font-size: 11px;
+  font-weight: 400;
+  margin-top: 4px;
+}
+
+.cds-table thead th[aria-sort] .cds-table__sort svg {
+  opacity: 1;
+}
+
+.cds-table__sort:focus-visible {
+  outline: 2px solid var(--cds-brand);
+  outline-offset: 5px;
+  border-radius: 2px;
+}
+
+@media (min-width: 1600px) {
+  .cds-table td {
+    font-size: 18px;
+  }
+}
+
+.cds-table__head {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 6px;
+}
+
+.cds-table th,
+.cds-table td {
+  white-space: nowrap;
+  padding: 0 16px;
+  height: var(--cds-row-height);
+}
+
+.cds-table thead th {
+  font-weight: 500;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-family: var(--cds-font-mono);
+  height: 40px;
+  padding-top: 0;
+  padding-bottom: 0;
+  vertical-align: middle;
+  color: var(--cds-ink-muted);
+  background: var(--cds-surface-sunken);
+  border-bottom: 1px solid var(--cds-line-strong);
+}
+
+.cds-table thead th .cds-table__head {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 6px;
+  margin: 0;
+  color: inherit;
+  font-size: inherit;
+}
+
+.cds-table thead th .cds-table__sort > span {
+  display: block;
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  color: var(--cds-ink-faint);
+  margin-top: 2px;
+}
+
+.cds-table thead th .cds-tooltip__trigger {
+  display: inline-flex;
+  align-items: center;
+  height: 15px;
+  margin: 0;
+  font-size: inherit;
+  color: var(--cds-ink-faint);
+}
+
+.cds-table thead th .cds-tooltip__trigger:hover {
+  color: var(--cds-action);
+}
+
+.cds-table__sort {
+  cursor: pointer;
+  text-align: inherit;
+  color: inherit;
+  background: transparent;
+  border: 0;
+  display: inline-block;
+  padding: 0;
+  font: inherit;
+  letter-spacing: inherit;
+  text-transform: inherit;
+}
+
+.cds-table__sort svg {
+  margin-left: 3px;
+  display: inline-block;
+  opacity: 0.4;
+  vertical-align: -3px;
+}
+
+.cds-table__sort:hover,
+.cds-table thead th[aria-sort] .cds-table__sort {
+  color: var(--cds-action);
+}
+
+.cds-table thead .cds-table__highlight {
+  color: var(--cds-on-brand);
+  background: var(--cds-brand-deep);
+}
+
+.cds-table thead .cds-table__highlight .cds-table__sort > span,
+.cds-table thead .cds-table__highlight .cds-tooltip__trigger {
+  color: var(--cds-on-brand);
+  opacity: 0.85;
+}
+
+.cds-table thead .cds-table__highlight .cds-table__sort:hover,
+.cds-table thead .cds-table__highlight[aria-sort] .cds-table__sort {
+  color: var(--cds-on-brand);
+}
+
+.cds-table tbody tr {
+  border-top: 1px solid var(--cds-line);
+}
+
+.cds-table tbody tr:first-child {
+  border-top: 0;
+}
+
+.cds-table td {
+  font-variant-numeric: tabular-nums;
+  font-family: var(--cds-font-mono);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.2;
+  vertical-align: middle;
+}
+
+.cds-table small {
+  font-weight: 400;
+  line-height: 1.4;
+  display: block;
+  font-family: var(--cds-font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.02em;
+  margin-top: 5px;
+  color: var(--cds-ink-faint);
+}
+
+.cds-table .cds-table__highlight {
+  background: var(--cds-highlight-bg);
+}
+
+.cds-table tbody tr:hover {
+  background: var(--cds-row-hover);
+}
+
+.cds-table tbody tr:hover .cds-table__highlight {
+  background: var(--cds-highlight-bg);
+}
+
+.cds-table--skeleton td {
+  padding: 0 16px;
+  height: var(--cds-row-height);
+}
+
+.cds-table-scroll {
+  scrollbar-color: var(--cds-line-strong) var(--cds-surface);
+  overflow-x: auto;
+  position: relative;
+}

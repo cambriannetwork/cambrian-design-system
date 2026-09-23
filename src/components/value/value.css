@@ -1,0 +1,24 @@
+/* Value. Signed numbers: up, down, flat, missing, and suspect. */
+
+.cds-value--flat {
+  color: var(--cds-ink);
+}
+
+.cds-value--suspect {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.cds-value--up { color: var(--cds-up); }
+
+.cds-value--down { color: var(--cds-down); }
+
+.cds-value--missing {
+  color: var(--cds-ink-faint);
+  font-family: var(--cds-font-mono);
+  font-size: 12px;
+  letter-spacing: 0.04em;
+}

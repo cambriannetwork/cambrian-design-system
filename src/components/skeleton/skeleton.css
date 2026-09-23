@@ -1,0 +1,18 @@
+/* Skeleton. The pulsing placeholder bar and loading table rows. */
+
+@keyframes cds-skeleton-pulse {
+  0%, 100% { opacity: 0.45; }
+  50% { opacity: 0.9; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cds-skeleton { animation: none; }
+}
+
+.cds-skeleton {
+  animation: cds-skeleton-pulse 1.4s ease-in-out infinite;
+  background: var(--cds-surface-raised);
+  display: block;
+  height: 9px;
+  border-radius: 2px;
+}

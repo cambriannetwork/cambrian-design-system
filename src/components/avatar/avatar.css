@@ -1,0 +1,27 @@
+/* Avatar. A 36px square with initials or a picture. */
+
+@media (max-width: 600px) {
+  .cds-avatar {
+    display: none;
+  }
+}
+
+.cds-avatar--image {
+  object-fit: cover;
+  background: var(--cds-tone-neutral-bg);
+}
+
+.cds-avatar {
+  font-weight: 550;
+  border: 1px solid var(--cds-line-strong);
+  background: var(--cds-tone-neutral-bg);
+  color: var(--cds-ink-soft);
+  flex-shrink: 0;
+  place-items: center;
+  display: grid;
+  width: 30px;
+  height: 30px;
+  border-radius: 6px;
+  font-family: var(--cds-font-mono);
+  font-size: 10px;
+}

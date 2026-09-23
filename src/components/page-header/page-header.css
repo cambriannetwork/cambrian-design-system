@@ -1,0 +1,59 @@
+/* PageHeader. The page title on the brand block, a subtitle, and actions. */
+
+@media (max-width: 600px) {
+  .cds-page-header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 28px;
+  }
+  .cds-page-header p {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 600px) {
+  .cds-page-header__actions {
+    width: 100%;
+  }
+}
+
+.cds-page-header h1 {
+  display: inline-block;
+  font-family: var(--cds-font-serif);
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 1.1;
+  letter-spacing: -0.4px;
+  color: var(--cds-on-brand);
+  background: var(--cds-brand-deep);
+  padding: 4px 14px 7px;
+  border-radius: 0;
+}
+
+.cds-page-header p {
+  margin-top: 12px;
+  font-size: 14px;
+  color: var(--cds-ink-muted);
+}
+
+.cds-page-header {
+  gap: 24px;
+  align-items: center;
+  justify-content: space-between;
+  display: flex;
+  margin-bottom: 28px;
+}
+
+.cds-page-header__actions {
+  align-items: center;
+  flex-wrap: wrap;
+  display: flex;
+  gap: 6px;
+}
+
+@media (max-width: 600px) {
+  .cds-page-header h1 {
+    font-size: 26px;
+  }
+}

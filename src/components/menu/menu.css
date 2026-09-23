@@ -1,0 +1,41 @@
+/* Menu. The popup panel, its title, notes and the closing action. */
+
+.cds-menu__note {
+  color: var(--cds-ink-faint);
+}
+
+.cds-menu__action {
+  margin-top: 2px;
+  align-self: flex-start;
+  color: var(--cds-brand);
+  font-size: 13px;
+  border-bottom: 1px solid transparent;
+}
+
+.cds-menu__action:hover {
+  border-bottom-color: var(--cds-brand);
+}
+
+.cds-menu__title {
+  color: var(--cds-ink-faint);
+  font-family: var(--cds-font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.cds-menu {
+  gap: 10px;
+  flex-direction: column;
+  display: flex;
+  padding: 12px;
+  min-width: 230px;
+  overflow-y: auto;
+  max-height: min(70vh, 520px);
+  box-sizing: border-box;
+  border-radius: var(--cds-radius);
+  border: 1px solid var(--cds-line-strong);
+  background: var(--cds-surface-raised);
+  box-shadow: 0 12px 32px -12px var(--cds-scrim);
+}

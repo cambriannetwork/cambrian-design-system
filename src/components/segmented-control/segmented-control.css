@@ -1,0 +1,44 @@
+/* SegmentedControl. Joined buttons where one is pressed. */
+
+.cds-segmented button:focus-visible {
+  outline: 2px solid var(--cds-brand);
+  outline-offset: 3px;
+}
+
+.cds-segmented {
+  flex-wrap: wrap;
+  display: inline-flex;
+  gap: 0;
+  margin: 0;
+  border: 1px solid var(--cds-line-strong);
+  border-radius: var(--cds-radius);
+  overflow: hidden;
+}
+
+.cds-segmented button {
+  cursor: pointer;
+  font: inherit;
+  min-height: 30px;
+  padding: 0 14px;
+  border: 0;
+  border-right: 1px solid var(--cds-line-strong);
+  border-radius: 0;
+  background: var(--cds-surface-control);
+  color: var(--cds-ink-muted);
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.cds-segmented button:last-child {
+  border-right: 0;
+}
+
+.cds-segmented button:hover {
+  color: var(--cds-ink);
+  background: var(--cds-surface-hover);
+}
+
+.cds-segmented button[aria-pressed="true"] {
+  background: var(--cds-brand-deep);
+  color: var(--cds-on-brand);
+}

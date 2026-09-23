@@ -1,0 +1,73 @@
+/* Select. Trigger, popup list, items and the note under the control. */
+
+.cds-select__item[data-highlighted] { background: var(--cds-surface-hover); }
+
+.cds-select__check { color: var(--cds-brand); }
+
+.cds-select__note {
+  color: var(--cds-ink-faint);
+  font-family: var(--cds-font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.cds-select__trigger:hover {
+  border-color: var(--cds-action);
+  background: var(--cds-surface-hover);
+}
+
+.cds-select {
+  gap: 2px;
+  flex-direction: column;
+  display: flex;
+  align-items: flex-start;
+}
+
+.cds-select__trigger {
+  cursor: pointer;
+  font: inherit;
+  align-items: center;
+  display: inline-flex;
+  gap: 7px;
+  font-weight: 500;
+  font-size: 13px;
+  font-family: var(--cds-font-sans);
+  color: var(--cds-ink);
+  background: var(--cds-surface-control);
+  border: 1px solid var(--cds-line-strong);
+  border-radius: var(--cds-radius);
+  padding: 0 12px;
+  min-height: 32px;
+  min-width: 220px;
+  justify-content: space-between;
+}
+
+.cds-select__popup {
+  padding: 4px;
+  min-width: 220px;
+  border-radius: var(--cds-radius);
+  border: 1px solid var(--cds-line-strong);
+  background: var(--cds-surface-raised);
+  box-shadow: 0 12px 32px -12px var(--cds-scrim);
+}
+
+.cds-select__item {
+  cursor: pointer;
+  color: var(--cds-ink);
+  padding: 8px 10px;
+  gap: 12px;
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+  border-radius: 3px;
+  font-size: 13px;
+}
+
+@media (max-width: 600px) {
+  .cds-select__trigger {
+    min-width: 0;
+    width: 100%;
+  }
+}

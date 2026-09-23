@@ -1,0 +1,75 @@
+/* Dialog. Backdrop, window, header, scrolling body and close button.
+   The window renders in a portal, so it sets its own focus ring and type. */
+
+.cds-dialog__body {
+  display: grid;
+  gap: 24px;
+  margin-top: 6px;
+}
+
+@media (max-width: 600px) {
+  .cds-dialog {
+    padding: 24px 20px;
+  }
+}
+
+.cds-dialog__header { display: flex; flex-direction: column; gap: 8px; padding-right: 20px; }
+
+.cds-dialog__close:hover { background: var(--cds-tone-neutral-bg); color: var(--cds-ink); }
+
+.cds-dialog button { cursor: pointer; }
+
+.cds-dialog__header h2 { line-height: 1.3;
+  font-family: var(--cds-font-serif);
+  font-weight: 600;
+  font-size: 24px;
+  letter-spacing: -0.4px;
+}
+
+.cds-dialog :focus-visible {
+  outline: 2px solid var(--cds-action);
+  outline-offset: 2px;
+}
+
+.cds-dialog {
+  color-scheme: dark;
+  border-color: var(--cds-line-strong);
+  color: var(--cds-ink);
+  background: var(--cds-surface);
+  overflow-y: auto;
+  max-height: min(85vh, 850px);
+  max-width: 640px;
+  box-sizing: border-box; outline: none; gap: 16px; display: grid; width: calc(100% - 2rem); z-index: 51; transform: translate(-50%, -50%); left: 50%; top: 50%; position: fixed;
+  letter-spacing: 0;
+  line-height: 1.45;
+  font-size: 14px;
+  font-family: var(--cds-font-sans);
+  border: 1px solid var(--cds-line-strong);
+  border-radius: var(--cds-radius-plate);
+  box-shadow: 0 24px 64px -24px var(--cds-scrim);
+  padding: 24px 26px 26px;
+}
+
+.cds-dialog h3 {
+  font-family: var(--cds-font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--cds-ink-muted);
+}
+
+.cds-dialog p {
+  margin-top: 8px;
+  color: var(--cds-ink-soft);
+  font-size: 13.5px;
+  line-height: 1.65;
+}
+
+.cds-dialog__close { color: var(--cds-ink-muted); padding: 6px; right: 10px; top: 10px; position: absolute;
+  border-radius: 3px;
+}
+
+.cds-dialog-backdrop { background: var(--cds-scrim); z-index: 50; inset: 0; position: fixed;
+  backdrop-filter: none;
+}

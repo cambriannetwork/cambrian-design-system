@@ -1,0 +1,41 @@
+/* Button. The one button style, in two sizes. Menu and dialog triggers
+   use it through buttonClass(). */
+
+.cds-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cds-button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.cds-button__count {
+  color: var(--cds-ink-faint);
+  font-family: var(--cds-font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.cds-button,
+.cds-button--small {
+  min-height: 32px;
+  padding: 0 12px;
+  border-radius: var(--cds-radius);
+  border: 1px solid var(--cds-line-strong);
+  background: var(--cds-surface-control);
+  color: var(--cds-ink);
+  font-family: var(--cds-font-sans);
+  font-size: 13px;
+  font-weight: 500;
+  gap: 7px;
+}
+
+.cds-button:hover {
+  border-color: var(--cds-action);
+  background: var(--cds-surface-hover);
+}

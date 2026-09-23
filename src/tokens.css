@@ -1,0 +1,114 @@
+/* Cambrian design system tokens.
+
+   Every colour, face and shape in the system is declared here, once per
+   theme. Components read these and nothing else. No raw colour value appears
+   outside this file.
+
+   Dark is the default. Put data-theme="light" on the <html> element for
+   light. The tokens sit on :root rather than on a wrapper, because dialogs,
+   menus and tooltips render in a portal on <body> and must still see them. */
+
+:root {
+  /* Faces */
+  --cds-font-serif: "Crimson Text", Georgia, serif;
+  --cds-font-sans: Figtree, system-ui, sans-serif;
+  --cds-font-mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+
+  /* Shape */
+  --cds-radius: 4px;
+  --cds-radius-plate: 12px 0 12px 0;
+  --cds-row-height: 46px;
+
+  /* Ground and surfaces. The page sits on bg; panels, dialogs and menus sit on the surfaces. */
+  --cds-bg: #0f1310;
+  --cds-surface: #151c15;
+  --cds-surface-sunken: #121812;
+  --cds-surface-raised: #1b241b;
+  --cds-surface-control: #172017;
+  --cds-surface-hover: #1f2a1f;
+  --cds-row-hover: #141b14;
+  --cds-highlight-bg: #14200f;
+  --cds-scrim: #0509049c;
+
+  /* Ink. Text and icons, from loudest to quietest. */
+  --cds-ink: #ecefd8;
+  --cds-ink-soft: #c9d3be;
+  --cds-ink-muted: #9faf97;
+  --cds-ink-faint: #7e8d77;
+
+  /* Lines. Hairlines only. Dark mode uses no shadows. */
+  --cds-line: #263126;
+  --cds-line-strong: #35443a;
+  --cds-line-dotted: #5c6c56;
+
+  /* Brand and action. Cambrian green marks what you can act on, never data. */
+  --cds-brand: #4b9328;
+  --cds-brand-deep: #3b7120;
+  --cds-on-brand: #ecefd8;
+  --cds-action: #78ad59;
+
+  /* Data. Up and down colours appear nowhere else. */
+  --cds-up: #86cc6c;
+  --cds-down: #e07a6b;
+
+  /* Notice. The warning strip. */
+  --cds-notice-bg: #1c1a12;
+  --cds-notice-line: #5a4a26;
+  --cds-notice-ink: #e6c98f;
+
+  /* Tones. Fill and ink pairs for badges and chips. Pick by meaning, not by colour. */
+  --cds-tone-positive-bg: #17301a;
+  --cds-tone-positive-ink: #9fd88a;
+  --cds-tone-caution-bg: #2a2214;
+  --cds-tone-caution-ink: #e0b06a;
+  --cds-tone-neutral-bg: #1b241b;
+  --cds-tone-neutral-ink: #9faf97;
+  --cds-tone-critical-bg: #2f1a17;
+  --cds-tone-critical-ink: #eda091;
+}
+
+:root[data-theme="light"] {
+  /* Ground and surfaces */
+  --cds-bg: #ecdfc3;
+  --cds-surface: #f2ede3;
+  --cds-surface-sunken: #ebe5d6;
+  --cds-surface-raised: #e9e2d2;
+  --cds-surface-control: #f7f3ea;
+  --cds-surface-hover: #e4dcc8;
+  --cds-row-hover: #ece6d8;
+  --cds-highlight-bg: #e6e8cf;
+  --cds-scrim: #1d321259;
+
+  /* Ink */
+  --cds-ink: #1d3212;
+  --cds-ink-soft: #34452c;
+  --cds-ink-muted: #5c6854;
+  --cds-ink-faint: #5c6854;
+
+  /* Lines */
+  --cds-line: #d7d2c8;
+  --cds-line-strong: #bfb8a6;
+  --cds-line-dotted: #9a9284;
+
+  /* Brand and action */
+  --cds-action: #3b7120;
+
+  /* Data */
+  --cds-up: #2a6f26;
+  --cds-down: #b8412f;
+
+  /* Notice */
+  --cds-notice-bg: #f3e6c8;
+  --cds-notice-line: #d3b77c;
+  --cds-notice-ink: #6b4713;
+
+  /* Tones */
+  --cds-tone-positive-bg: #dcebd2;
+  --cds-tone-positive-ink: #24571f;
+  --cds-tone-caution-bg: #f1e2bf;
+  --cds-tone-caution-ink: #6b4713;
+  --cds-tone-neutral-bg: #e4dcc8;
+  --cds-tone-neutral-ink: #4a5942;
+  --cds-tone-critical-bg: #f3d6cf;
+  --cds-tone-critical-ink: #8a2f21;
+}

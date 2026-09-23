@@ -1,0 +1,40 @@
+/* Checkbox. Box, check mark and label, plus the disabled state. */
+
+.cds-checkbox__box[data-checked] {
+  background: var(--cds-brand);
+  border-color: var(--cds-brand);
+}
+
+.cds-checkbox__mark { display: inline-flex; }
+
+.cds-checkbox--disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.cds-checkbox--disabled .cds-checkbox__box {
+  cursor: not-allowed;
+}
+
+.cds-checkbox {
+  cursor: pointer;
+  color: var(--cds-ink-muted);
+  gap: 8px;
+  align-items: center;
+  display: inline-flex;
+  font-size: 13px;
+}
+
+.cds-checkbox__box {
+  cursor: pointer;
+  color: var(--cds-on-brand);
+  background: var(--cds-surface-control);
+  border: 1px solid var(--cds-line-strong);
+  padding: 0;
+  justify-content: center;
+  align-items: center;
+  display: inline-flex;
+  width: 16px;
+  height: 16px;
+  border-radius: 3px;
+}

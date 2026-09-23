@@ -1,0 +1,50 @@
+/* SearchField. Search input with icon and clear button. */
+
+.cds-search input::placeholder {
+  color: var(--cds-ink-muted);
+}
+
+.cds-search input::-webkit-search-cancel-button {
+  display: none;
+}
+
+.cds-search button {
+  display: grid;
+  place-items: center;
+  min-width: 28px;
+  height: 32px;
+}
+
+.cds-search {
+  color: var(--cds-ink-muted);
+  gap: 12px;
+  align-items: center;
+  display: flex;
+  min-height: 32px;
+  width: 280px;
+  padding: 0 10px;
+  border-radius: var(--cds-radius);
+  border: 1px solid var(--cds-line-strong);
+  background: var(--cds-surface-control);
+}
+
+.cds-search input {
+  outline: none;
+  color: var(--cds-ink);
+  font: inherit;
+  background: transparent;
+  border: 0;
+  min-width: 0;
+  width: 100%;
+  font-size: 13px;
+}
+
+.cds-search:focus-within {
+  border-color: var(--cds-action);
+}
+
+@media (max-width: 600px) {
+  .cds-search {
+    width: 100%;
+  }
+}

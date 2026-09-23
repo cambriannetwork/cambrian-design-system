@@ -1,0 +1,119 @@
+/* Shell. The page frame, the top bar with the mark, and the skip link.
+   The focus ring for everything inside the frame is set here too. */
+
+@media (max-width: 900px) {
+  .cds-shell__main {
+    padding: 36px 24px;
+  }
+  .cds-header {
+    padding: 0 24px;
+  }
+}
+
+@media (max-width: 600px) {
+  .cds-header__brand {
+    font-size: 16px;
+  }
+}
+
+.cds-shell a { text-decoration: none; }
+
+.cds-shell button { cursor: pointer; }
+
+.cds-skip-link { position: absolute; left: -10000px; }
+
+.cds-skip-link:focus { left: 16px; top: 16px; z-index: 100; padding: 10px; background: var(--cds-surface); color: var(--cds-ink); }
+
+.cds-shell {
+  background: var(--cds-bg);
+  color: var(--cds-ink);
+  min-height: 100vh;
+  font-family: var(--cds-font-sans);
+  font-size: 14px;
+  line-height: 1.45;
+  letter-spacing: 0;
+}
+
+.cds-header {
+  color: var(--cds-ink);
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+  position: relative;
+  height: 64px;
+  padding: 0 32px;
+  border-bottom: 1px solid var(--cds-line-strong);
+  background: var(--cds-bg);
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.cds-header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url('/texture.png') center / 1200px auto repeat;
+  opacity: 0.55;
+  z-index: -1;
+  pointer-events: none;
+}
+
+:root[data-theme='light'] .cds-header::before {
+  filter: grayscale(1) invert(1);
+  mix-blend-mode: multiply;
+  opacity: 0.22;
+}
+
+.cds-header__brand {
+  align-items: center;
+  display: flex;
+  gap: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: -0.2px;
+}
+
+.cds-header__mark {
+  display: inline-flex;
+  flex-shrink: 0;
+}
+
+.cds-header__product {
+  white-space: nowrap;
+  font-family: var(--cds-font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--cds-ink-muted);
+  margin-left: 12px;
+  padding-left: 12px;
+  border-left: 1px solid var(--cds-line-strong);
+}
+
+.cds-shell__main {
+  margin: auto;
+  max-width: 1560px;
+  padding: 36px 32px 64px;
+}
+
+.cds-shell :focus-visible {
+  outline: 2px solid var(--cds-action);
+  outline-offset: 2px;
+}
+
+@media (max-width: 600px) {
+  .cds-header {
+    height: 68px;
+    padding: 0 16px;
+  }
+  .cds-shell__main {
+    padding: 24px 16px 48px;
+  }
+  .cds-header__product {
+    padding-left: 10px;
+    margin-left: 10px;
+    font-size: 12px;
+    display: none;
+  }
+}

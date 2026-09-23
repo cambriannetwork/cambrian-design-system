@@ -1,0 +1,38 @@
+/* Chip. A pill with an optional remove button, and the row that holds them. */
+
+.cds-chip-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.cds-chip button {
+  display: grid;
+  place-items: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  color: var(--cds-ink-muted);
+}
+
+.cds-chip button:hover {
+  background: var(--cds-surface-hover);
+  color: var(--cds-ink);
+}
+
+.cds-chip {
+  border: 1px solid var(--cds-line-strong);
+  gap: 8px;
+  align-items: center;
+  display: inline-flex;
+  font-weight: 500;
+  font-family: var(--cds-font-mono);
+  padding: 3px 4px 3px 9px;
+  border-radius: var(--cds-radius);
+  background: var(--cds-surface-control);
+  color: var(--cds-ink-soft);
+  text-transform: none;
+  letter-spacing: 0.02em;
+  font-size: 12px;
+}

@@ -1,0 +1,16 @@
+/* Layout for the showcase page only. Not part of the system: nothing here
+   ships to apps. It follows the same rule as the system, tokens only. */
+.sc-section { margin: 0 0 48px; }
+.sc-section > h2 { margin: 0 0 6px; color: var(--cds-ink-muted); }
+.sc-note { margin: 0 0 16px; color: var(--cds-ink-faint); font-size: 14px; max-width: 70ch; }
+.sc-demo { display: grid; gap: 16px; }
+.sc-row { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; }
+.sc-swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 10px; }
+.sc-swatch { display: flex; align-items: center; gap: 10px; font-size: 12px; color: var(--cds-ink-soft); }
+.sc-swatch code { font-family: var(--cds-font-mono); }
+.sc-chip { width: 28px; height: 28px; flex-shrink: 0; border-radius: var(--cds-radius); border: 1px solid var(--cds-line-strong); }
+.sc-serif { font-family: var(--cds-font-serif); font-size: 28px; margin: 0; }
+.sc-sans { font-family: var(--cds-font-sans); font-size: 16px; margin: 0; }
+.sc-mono { font-family: var(--cds-font-mono); font-size: 14px; margin: 0; }
+.sc-identity { display: flex; align-items: center; gap: 10px; text-align: left; }
+.sc-left { text-align: left; }

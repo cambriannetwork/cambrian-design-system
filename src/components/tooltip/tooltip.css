@@ -1,0 +1,26 @@
+/* Tooltip. The trigger and the popup with its arrow. */
+
+.cds-tooltip__trigger {
+  display: inline-flex;
+  align-items: center;
+  cursor: help;
+  color: var(--cds-ink-muted);
+  border-radius: 4px;
+}
+
+.cds-tooltip__arrow { color: var(--cds-surface-raised); }
+
+.cds-tooltip {
+  white-space: normal;
+  text-align: left;
+  line-height: 1.5;
+  font-weight: 400;
+  font-size: 13px;
+  color: var(--cds-ink);
+  padding: 10px 12px;
+  max-width: 280px;
+  border-radius: var(--cds-radius);
+  border: 1px solid var(--cds-line-strong);
+  background: var(--cds-surface-raised);
+  box-shadow: 0 12px 32px -12px var(--cds-scrim);
+}
