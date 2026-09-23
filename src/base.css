@@ -1,14 +1,10 @@
-/* Base layer: the reset, the three brand faces, the page ground and one
-   accessibility utility.
+/* Base layer: the reset, the page ground and one accessibility utility.
+   The three brand faces load from styles.css.
 
    The reset is the Tailwind CSS v4 preflight as Tailwind compiles it, kept
    inside @layer base so every component rule outranks it, exactly as before.
    Copyright (c) Tailwind Labs, Inc. MIT License. Tailwind itself is not a
    dependency; only this reset is kept. */
-@import url("https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Figtree:wght@300..900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&display=swap");
-
 @layer base {
   *, ::after, ::before, ::backdrop { box-sizing: border-box; border: 0px solid; margin: 0px; padding: 0px; }
   ::file-selector-button { box-sizing: border-box; border: 0px solid; margin: 0px; padding: 0px; }

@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.1.1 (2026-09-23)
+
+- Fix: the font imports moved from base.css to the top of styles.css. Some
+  bundlers inline the local files in place, which left the font imports after
+  real rules, where CSS does not allow them, and the whole stylesheet failed to
+  parse. Nothing changes on screen.
+
 ## 0.1.0 (2026-09-23)
 
 The first release, extracted from the KOL leaderboard's Cambrian Terminal design.

@@ -1,6 +1,6 @@
 {
   "name": "@cambrian/design-system",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Cambrian's design system for dashboards and data terminals: tokens, a base layer and React components.",
   "private": true,
   "type": "module",

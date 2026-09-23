@@ -11,8 +11,8 @@ Before you start, read the [six rules in the README](README.md#six-rules).
 ```
 src/
   tokens.css                 every colour, face and shape, once per theme
-  base.css                   reset, fonts, page ground, .cds-sr-only
-  styles.css                 imports everything, in order
+  base.css                   reset, page ground, .cds-sr-only
+  styles.css                 the fonts, then everything else, in order
   index.ts                   every export
   components/<name>/
     <Name>.tsx               the React component

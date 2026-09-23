@@ -27,7 +27,7 @@ Install it from GitHub at a tagged version. Pin the tag, so an update never
 lands in your app without you choosing it.
 
 ```bash
-npm install github:cambriannetwork/cambrian-design-system#v0.1.0
+npm install github:cambriannetwork/cambrian-design-system#v0.1.1
 ```
 
 It also needs these in your app, which you likely have already:

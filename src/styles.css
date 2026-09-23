@@ -1,5 +1,13 @@
-/* The whole design system in one import. Order matters: tokens first, then the
-   base layer, then components from the page frame inward to the data. */
+/* The whole design system in one import. Order matters: the fonts, then
+   tokens, then the base layer, then components from the page frame inward to
+   the data.
+
+   The font imports must come first. CSS only allows @import before any rule,
+   and some bundlers inline the local files below in place, so a font import
+   inside one of them would land after real rules and fail to parse. */
+@import url("https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Figtree:wght@300..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&display=swap");
 @import "./tokens.css";
 @import "./base.css";
 @import "./components/typography/typography.css";
