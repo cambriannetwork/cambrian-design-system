@@ -13,6 +13,8 @@
 - Type compatibility: removable Chip now requires clearLabel when onClear is
   supplied. Consumers must name their remove action. This stricter accessibility
   contract needs review before choosing the next release version.
+- Patch development-tool advisories through targeted Vite and source-map-js
+  lock updates, with no major upgrade.
 - Add packaging, contrast, style and behavior regressions. Correct overlay
   screenshot targets and review the updated visual references.
 - Record the full adoption audit, remaining gaps and live-data composition

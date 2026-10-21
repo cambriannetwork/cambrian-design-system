@@ -130,3 +130,29 @@ installed React, Base UI or icon peers. The packed files include core CSS,
 optional font CSS and the pure theme entry. Independent review found no blocking
 source or packaging regression after the fixes. This is a reviewed branch
 candidate, with no release or merge implied.
+
+## Dependency audit
+
+A fresh registry audit on 2026-10-21 found two affected development packages in
+the adoption lock: Vite 7.3.6 and source-map-js 1.2.1. Available fixes are Vite
+7.3.7 and source-map-js 1.2.2, within the current supported ranges. The targeted
+follow-up updates those tools and reruns the complete validation gate. A fresh
+clean install, registry audit and complete check all exit zero after the patch.
+The registry audit reports zero known affected packages in this lock at that
+check time; the reviewed visual references remain unchanged. No major
+framework upgrade or forced audit fix is required.
+
+The source-map advisory concerns indexed-map CPU exhaustion
+([GHSA-68fv-2mgg-jv7q](https://github.com/advisories/GHSA-68fv-2mgg-jv7q)).
+Vite's reported set includes development editor-launch handling and filesystem
+or middleware behavior
+([GHSA-587h-7wmj-h5pm](https://github.com/advisories/GHSA-587h-7wmj-h5pm)).
+This finding is about development tooling, not evidence of an exploited product.
+The funding CSS-only consumer does not install the showcase's development tools.
+
+GitHub separately reported 49 open alerts against the existing default-branch
+lock at this check. That is a different dependency snapshot, with repeated
+advisories across historical versions. It must not be presented as 49 current
+runtime defects in this adoption branch. Default-branch alerts change only when
+the relevant fixes reach that branch. Registry audit results cover known
+advisories at their check time; they do not certify all software safe.
