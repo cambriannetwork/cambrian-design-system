@@ -7,12 +7,6 @@
   margin-top: 6px;
 }
 
-@media (max-width: 600px) {
-  .cds-dialog {
-    padding: 24px 20px;
-  }
-}
-
 .cds-dialog__header { display: flex; flex-direction: column; gap: 8px; padding-right: 20px; }
 
 .cds-dialog__close:hover { background: var(--cds-tone-neutral-bg); color: var(--cds-ink); }
@@ -32,7 +26,7 @@
 }
 
 .cds-dialog {
-  color-scheme: dark;
+  color-scheme: inherit;
   border-color: var(--cds-line-strong);
   color: var(--cds-ink);
   background: var(--cds-surface);
@@ -72,4 +66,10 @@
 
 .cds-dialog-backdrop { background: var(--cds-scrim); z-index: 50; inset: 0; position: fixed;
   backdrop-filter: none;
+}
+
+@media (max-width: 600px) {
+  .cds-dialog {
+    padding: 24px 20px;
+  }
 }

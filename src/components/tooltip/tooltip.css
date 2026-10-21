@@ -11,6 +11,7 @@
 .cds-tooltip__arrow { color: var(--cds-surface-raised); }
 
 .cds-tooltip {
+  font-family: var(--cds-font-sans);
   white-space: normal;
   text-align: left;
   line-height: 1.5;

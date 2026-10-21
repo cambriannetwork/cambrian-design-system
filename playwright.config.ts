@@ -5,6 +5,7 @@ import { defineConfig } from '@playwright/test';
 // differently on each operating system, so references are stored per platform.
 export default defineConfig({
   testDir: 'tests',
+  testMatch: '**/*.spec.ts',
   fullyParallel: true,
   reporter: [['list']],
   use: { baseURL: 'http://localhost:5174', viewport: { width: 1440, height: 1000 } },

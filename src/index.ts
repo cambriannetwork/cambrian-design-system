@@ -7,6 +7,7 @@ export { Shell, ShellHeader, ShellMain } from './components/shell/Shell';
 export { PageHeader } from './components/page-header/PageHeader';
 export { Logo } from './components/logo/Logo';
 export { useTheme, type Theme } from './components/theme/theme';
+export { initializeTheme } from './theme';
 export { ThemeToggle } from './components/theme/ThemeToggle';
 
 // Controls

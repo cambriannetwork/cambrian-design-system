@@ -1,33 +1,3 @@
-/* The whole design system in one import. Order matters: the fonts, then
-   tokens, then the base layer, then components from the page frame inward to
-   the data.
-
-   The font imports must come first. CSS only allows @import before any rule,
-   and some bundlers inline the local files below in place, so a font import
-   inside one of them would land after real rules and fail to parse. */
-@import url("https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Figtree:wght@300..900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&display=swap");
-@import "./tokens.css";
-@import "./base.css";
-@import "./components/typography/typography.css";
-@import "./components/shell/shell.css";
-@import "./components/page-header/page-header.css";
-@import "./components/button/button.css";
-@import "./components/segmented-control/segmented-control.css";
-@import "./components/search-field/search-field.css";
-@import "./components/select/select.css";
-@import "./components/checkbox/checkbox.css";
-@import "./components/tooltip/tooltip.css";
-@import "./components/dialog/dialog.css";
-@import "./components/menu/menu.css";
-@import "./components/chip/chip.css";
-@import "./components/badge/badge.css";
-@import "./components/notice/notice.css";
-@import "./components/skeleton/skeleton.css";
-@import "./components/empty-state/empty-state.css";
-@import "./components/pagination/pagination.css";
-@import "./components/avatar/avatar.css";
-@import "./components/plate/plate.css";
-@import "./components/table/table.css";
-@import "./components/value/value.css";
+/* Complete backwards-compatible entry, including optional hosted fonts. */
+@import "./fonts.css";
+@import "./core.css";

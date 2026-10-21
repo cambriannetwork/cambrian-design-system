@@ -1,0 +1,4 @@
+/* Optional hosted brand fonts. Import before core.css or any other CSS rules. */
+@import url("https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Figtree:wght@300..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&display=swap");

@@ -10,8 +10,13 @@ export function ChipGroup({ label, children }: { label: string; children: ReactN
   );
 }
 
-/** A small pill. Give it onClear to show a remove button. */
-export function Chip({ children, onClear, clearLabel }: { children: ReactNode; onClear?: () => void; clearLabel?: string }) {
+type ChipProps = { children: ReactNode } & (
+  | { onClear: () => void; clearLabel: string }
+  | { onClear?: never; clearLabel?: string }
+);
+
+/** A small pill. A remove button always requires its accessible clearLabel. */
+export function Chip({ children, onClear, clearLabel }: ChipProps) {
   return (
     <span className="cds-chip">
       {children}

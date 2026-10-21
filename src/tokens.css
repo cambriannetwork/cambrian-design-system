@@ -51,6 +51,17 @@
   --cds-up: #86cc6c;
   --cds-down: #e07a6b;
 
+  /* Categorical chart identities, never positive/negative meaning.
+     Pair lines with direct labels and controls; colour alone is insufficient. */
+  --cds-chart-1: #82b5ff;
+  --cds-chart-2: #d5a3f5;
+  --cds-chart-3: #e8bf72;
+  --cds-chart-4: #6dc9c5;
+  --cds-chart-5: #efa3b9;
+  --cds-chart-6: #b8bb80;
+  --cds-chart-7: #cda781;
+  --cds-chart-8: #aab6c9;
+
   /* Notice. The warning strip. */
   --cds-notice-bg: #1c1a12;
   --cds-notice-line: #5a4a26;
@@ -96,6 +107,16 @@
   /* Data */
   --cds-up: #2a6f26;
   --cds-down: #b8412f;
+
+  /* Same categorical identities, darker against light surfaces. */
+  --cds-chart-1: #285b99;
+  --cds-chart-2: #704895;
+  --cds-chart-3: #805916;
+  --cds-chart-4: #176b67;
+  --cds-chart-5: #9b4161;
+  --cds-chart-6: #586324;
+  --cds-chart-7: #805235;
+  --cds-chart-8: #4d5e78;
 
   /* Notice */
   --cds-notice-bg: #f3e6c8;

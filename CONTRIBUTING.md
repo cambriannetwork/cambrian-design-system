@@ -12,7 +12,9 @@ Before you start, read the [six rules in the README](README.md#six-rules).
 src/
   tokens.css                 every colour, face and shape, once per theme
   base.css                   reset, page ground, .cds-sr-only
-  styles.css                 the fonts, then everything else, in order
+  styles.css                 compatible combined fonts and core entry
+  core.css                   font-free tokens, reset and component styles
+  fonts.css                  optional remote font imports
   index.ts                   every export
   components/<name>/
     <Name>.tsx               the React component
@@ -63,7 +65,7 @@ system replaced, when 50 tokens turned out to hold only 41 distinct values.
 6. If it renders in a portal (a popup, a menu, anything that floats), check it in
    both themes. Portals sit outside the page wrapper and only see what is on
    `:root`.
-7. Export it from `src/index.ts`, and add its stylesheet to `src/styles.css`.
+7. Export it from `src/index.ts`, and add its stylesheet to `src/core.css`.
    Components are imported from the page frame inward to the data, so a new one
    usually goes near the component it relates to.
 8. Add a section for it to `showcase/Showcase.tsx` with realistic content, and
@@ -86,13 +88,16 @@ component there. The visual tests only cover the showcase.
 npm run check
 ```
 
-That runs the typecheck, the linter, the showcase build and the visual tests.
-All four must pass.
+That runs unit contracts, the typecheck, the linter, the showcase build and
+browser tests, including visual references. All five stages must pass.
 
-Screenshots are the check that matters most. Three bugs have reached production
+Screenshots catch visual failures that behavior tests miss. Three bugs have reached production
 while every automated test passed: a dialog with no background, a menu that
 opened invisibly, and a dialog wider than its own maximum. All three were CSS,
-and all three would have failed a screenshot.
+and all three would have failed a screenshot. Pair visual checks with targeted
+behavior, computed-style, accessibility and packaging regressions. Include both
+themes, narrow layouts and reduced motion when affected. See the
+[live-data contract](docs/live-data.md) and [adoption audit](docs/funding-dashboard-audit.md).
 
 ## Release
 
