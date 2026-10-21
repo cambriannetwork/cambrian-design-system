@@ -30,7 +30,7 @@ lands in your app without you choosing it.
 npm install github:cambriannetwork/cambrian-design-system#v0.1.1
 ```
 
-It also needs these in your app, which you likely have already:
+React component consumers also need these peers. CSS-only consumers do not:
 
 ```bash
 npm install react react-dom @base-ui/react lucide-react
@@ -64,14 +64,39 @@ export default function Page() {
 }
 ```
 
-Your own page styles go in a stylesheet imported after `styles.css`. Read the
-tokens in them rather than typing colours.
+Your own page styles go in a stylesheet imported after the shared styles. Read
+the tokens in them rather than typing colours.
+
+### CSS-only and local fonts
+
+The same classes and tokens work with native HTML or another framework:
+
+```ts
+import '@cambrian/design-system/core.css';
+```
+
+`core.css` has no remote font requests. Self-host the chosen Figtree, Crimson
+Text and IBM Plex Mono faces in your application, with `font-display: swap`, or
+use the declared fallbacks. Keep font licenses and choose subsets appropriate
+to your content. [Fontsource](https://fontsource.org/docs/getting-started/install)
+is one source of versioned, self-hostable font packages.
+
+`fonts.css` is an optional Google Fonts import. The original `styles.css`
+continues to combine fonts and core for existing consumers. Do not import both
+core and combined styles. CSS-only use does not install React, Base UI or icons;
+React exports require those peers explicitly.
+
+Pin a reviewed tag or full commit. The funding adoption branch is a review
+candidate, not a new release. See the
+[adoption audit](docs/funding-dashboard-audit.md) and
+[live-data recipe](docs/live-data.md).
+
 
 ## What is in it
 
 ### Tokens
 
-39 custom properties in [`src/tokens.css`](src/tokens.css), one value per theme.
+47 custom properties in [`src/tokens.css`](src/tokens.css), one value per theme.
 
 | Group | Tokens | For |
 |---|---|---|
@@ -80,6 +105,7 @@ tokens in them rather than typing colours.
 | Lines | `line`, `line-strong`, `line-dotted` | Hairlines. The dark theme uses no shadows |
 | Brand and action | `brand`, `brand-deep`, `on-brand`, `action` | Cambrian green, for things you can act on |
 | Data | `up`, `down` | Gains and losses. Nothing else uses these colours |
+| Chart | `chart-1` through `chart-8` | Categorical source identity, with labels and line patterns |
 | Notice | `notice-bg`, `notice-line`, `notice-ink` | The warning strip |
 | Tones | `tone-positive`, `tone-caution`, `tone-neutral`, `tone-critical`, each with `-bg` and `-ink` | Badges |
 | Faces | `font-serif`, `font-sans`, `font-mono` | Crimson Text, Figtree, IBM Plex Mono |
@@ -123,12 +149,14 @@ These are the decisions that make the system hang together. A change that
 breaks one of them needs a good reason, written in the pull request.
 
 1. Use tokens only. No colour value appears anywhere except `tokens.css`. If you
-   need a colour that does not exist, add a token.
+   need a colour that does not exist, add a token. The unmodified official logo
+   is brand artwork and retains its fixed source fills.
 2. Keep tokens on `:root`. Dialogs, menus and tooltips render in a portal on
    `<body>`, outside any wrapper. A token declared on a wrapper resolves to
    nothing there, and the popup renders with no background. This has happened.
 3. Missing is not zero. A number that was not measured shows `N/A`, never
-   `0`, and sorts last. `Value` does this for you when you pass `null`.
+   `0`, and sorts last. `Value` renders N/A when you pass `null`; the application
+   validates finite numbers and implements missing-last sorting.
 4. Show the number and flag the doubt. When a value is implausible, show it as
    received and add a badge through `Value`'s `suspect` prop. Never hide, round
    or correct it quietly.
@@ -149,6 +177,19 @@ return <ThemeToggle theme={theme} onChange={setTheme} />;
 
 `useTheme` saves to `localStorage` under `cds-theme`. Pass
 `useTheme({ storageKey })` to keep an older key, so visitors keep their choice.
+Storage can be unavailable; the current session still retains its theme.
+
+For a client-rendered page, call the optional `initializeTheme({ storageKey })`
+before mounting the app to apply a saved theme before the app renders. Import it
+from the pure `@cambrian/design-system/theme` entry, or alongside `useTheme`
+from the React entry. Run the initializer as early as your
+bundler and CSP allow. Server-rendered pages should supply the matching initial
+`data-theme` on the server when possible. A hook effect alone cannot prevent a
+first-paint theme flash, and this helper does not override a delayed script.
+
+Tables keep the existing minimum width by default. A product can set
+`--cds-table-min-width` on its table region to match its actual columns. Keep
+horizontal scrolling keyboard accessible and give the region a useful name.
 
 ## Working on the system
 

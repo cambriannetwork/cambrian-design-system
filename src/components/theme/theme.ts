@@ -1,7 +1,7 @@
 'use client';
 import { useEffect, useState } from 'react';
-
-export type Theme = 'dark' | 'light';
+import { readTheme, type Theme } from '../../theme';
+export type { Theme } from '../../theme';
 
 /**
  * The page theme, saved in the browser. It sets data-theme on <html>, which
@@ -11,12 +11,14 @@ export type Theme = 'dark' | 'light';
 export function useTheme({ storageKey = 'cds-theme' }: { storageKey?: string } = {}) {
   // Read the saved choice during the first client render rather than in an
   // effect, so the toggle never flips after paint.
-  const [theme, setTheme] = useState<Theme>(() =>
-    typeof window !== 'undefined' && localStorage.getItem(storageKey) === 'light' ? 'light' : 'dark',
-  );
+  const [theme, setTheme] = useState<Theme>(() => readTheme({ storageKey }));
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme);
-    localStorage.setItem(storageKey, theme);
+    try {
+      window.localStorage.setItem(storageKey, theme);
+    } catch {
+      // Theme changes still work when the browser denies persistence.
+    }
   }, [theme, storageKey]);
   return [theme, setTheme] as const;
 }

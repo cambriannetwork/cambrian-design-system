@@ -21,8 +21,7 @@
   font-weight: 500;
 }
 
-.cds-button,
-.cds-button--small {
+.cds-button {
   min-height: 32px;
   padding: 0 12px;
   border-radius: var(--cds-radius);
@@ -38,4 +37,10 @@
 .cds-button:hover {
   border-color: var(--cds-action);
   background: var(--cds-surface-hover);
+}
+
+.cds-button--small {
+  min-height: 28px;
+  padding: 0 10px;
+  font-size: 12px;
 }

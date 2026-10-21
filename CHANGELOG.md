@@ -1,5 +1,25 @@
 # Changelog
 
+## Unreleased: funding dashboard adoption
+
+- Add a font-free core stylesheet, an optional font stylesheet and CSS-only
+  consumption without React peer installation. The combined stylesheet remains
+  available. Add a pure, storage-safe theme initializer.
+- Add eight categorical chart tokens for real multi-venue history plots and a
+  configurable table minimum width. Signed values retain their own tokens.
+- Fix reduced motion, responsive cascade, menu text contrast, overlay fonts,
+  light dialog controls, avatar recovery and denied theme storage. Make the
+  compact button size distinct. Header texture is now explicitly opt-in.
+- Type compatibility: removable Chip now requires clearLabel when onClear is
+  supplied. Consumers must name their remove action. This stricter accessibility
+  contract needs review before choosing the next release version.
+- Patch development-tool advisories through targeted Vite and source-map-js
+  lock updates, with no major upgrade.
+- Add packaging, contrast, style and behavior regressions. Correct overlay
+  screenshot targets and review the updated visual references.
+- Record the full adoption audit, remaining gaps and live-data composition
+  contract in docs. No tag or release is created by this branch.
+
 ## 0.1.1 (2026-09-23)
 
 - Fix: the font imports moved from base.css to the top of styles.css. Some

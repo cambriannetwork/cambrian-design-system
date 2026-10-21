@@ -3,7 +3,7 @@
 
 .cds-table {
   width: 100%;
-  min-width: 1110px;
+  min-width: var(--cds-table-min-width, 1110px);
   border-collapse: collapse;
   font-variant-numeric: tabular-nums;
   text-align: right;
@@ -25,12 +25,6 @@
   outline: 2px solid var(--cds-brand);
   outline-offset: 5px;
   border-radius: 2px;
-}
-
-@media (min-width: 1600px) {
-  .cds-table td {
-    font-size: 18px;
-  }
 }
 
 .cds-table__head {
@@ -181,4 +175,10 @@
   scrollbar-color: var(--cds-line-strong) var(--cds-surface);
   overflow-x: auto;
   position: relative;
+}
+
+@media (min-width: 1600px) {
+  .cds-table td {
+    font-size: 18px;
+  }
 }

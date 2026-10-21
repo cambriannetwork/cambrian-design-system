@@ -18,13 +18,6 @@
   cursor: not-allowed;
 }
 
-@media (max-width: 600px) {
-  .cds-pagination {
-    flex-direction: column;
-    align-items: stretch;
-  }
-}
-
 .cds-pagination__page,
 .cds-pagination p {
   font-family: var(--cds-font-mono);
@@ -76,4 +69,11 @@
   padding: 0 8px;
   font-family: var(--cds-font-mono);
   font-size: 12px;
+}
+
+@media (max-width: 600px) {
+  .cds-pagination {
+    flex-direction: column;
+    align-items: stretch;
+  }
 }

@@ -29,21 +29,21 @@ for (const theme of ['dark', 'light'] as const) {
       await open(page, theme);
       await page.getByTestId('overlays').getByRole('button', { name: 'Columns' }).click();
       await expect(page.locator('.cds-menu')).toBeVisible();
-      await expect(page.getByTestId('overlays')).toHaveScreenshot(`${theme}-menu.png`);
+      await expect(page.locator('.cds-menu')).toHaveScreenshot(`${theme}-menu.png`);
     });
 
     test('select', async ({ page }) => {
       await open(page, theme);
       await page.getByRole('combobox', { name: 'Activity window' }).click();
       await expect(page.locator('.cds-select__popup')).toBeVisible();
-      await expect(page.getByTestId('fields')).toHaveScreenshot(`${theme}-select.png`);
+      await expect(page.locator('.cds-select__popup')).toHaveScreenshot(`${theme}-select.png`);
     });
 
     test('tooltip', async ({ page }) => {
       await open(page, theme);
       await page.getByTestId('overlays').getByRole('button', { name: 'About this' }).hover();
       await expect(page.locator('.cds-tooltip')).toBeVisible();
-      await expect(page.getByTestId('overlays')).toHaveScreenshot(`${theme}-tooltip.png`);
+      await expect(page.locator('.cds-tooltip')).toHaveScreenshot(`${theme}-tooltip.png`);
     });
   });
 }

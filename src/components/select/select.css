@@ -45,6 +45,8 @@
 }
 
 .cds-select__popup {
+  font-family: var(--cds-font-sans);
+  line-height: 1.45;
   padding: 4px;
   min-width: 220px;
   border-radius: var(--cds-radius);

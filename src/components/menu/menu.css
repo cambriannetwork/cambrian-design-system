@@ -7,13 +7,13 @@
 .cds-menu__action {
   margin-top: 2px;
   align-self: flex-start;
-  color: var(--cds-brand);
+  color: var(--cds-action);
   font-size: 13px;
   border-bottom: 1px solid transparent;
 }
 
 .cds-menu__action:hover {
-  border-bottom-color: var(--cds-brand);
+  border-bottom-color: var(--cds-action);
 }
 
 .cds-menu__title {
@@ -26,6 +26,10 @@
 }
 
 .cds-menu {
+  color: var(--cds-ink);
+  font-family: var(--cds-font-sans);
+  font-size: 14px;
+  line-height: 1.45;
   gap: 10px;
   flex-direction: column;
   display: flex;
