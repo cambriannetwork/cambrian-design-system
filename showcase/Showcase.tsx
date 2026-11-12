@@ -104,19 +104,28 @@ export function Showcase() {
             </div>
           </Section>
 
-          <Section id="type" title="Type" note="Crimson Text for titles, Figtree for prose, IBM Plex Mono for numbers and labels.">
-            <p className="sc-serif">Crimson Text. Page and dialog titles only.</p>
-            <p className="sc-sans">Figtree. Everything a person reads as prose.</p>
+          <Section id="type" title="Type" note="The type scale, one class per step. Crimson Text for section headlines, Figtree for UI and body, IBM Plex Mono for figures and the mono label.">
+            <p className="cds-display">cds-display. The hero only.</p>
+            <p className="cds-h1">cds-h1. Page headline.</p>
+            <p className="cds-h2">cds-h2. Section headline.</p>
+            <p className="cds-h3">cds-h3. Subsection headline.</p>
+            <p className="cds-h4">cds-h4. Above body-lg in a section.</p>
+            <p className="cds-h5">cds-h5. Card and box titles.</p>
+            <p className="cds-eyebrow">cds-eyebrow. Above a headline.</p>
+            <p className="cds-body-lg">cds-body-lg. Body copy in a section.</p>
+            <p className="cds-body">cds-body. Cards and boxes.</p>
+            <p className="cds-body-sm">cds-body-sm. Labels, tables, meta.</p>
             <p className="sc-mono">IBM Plex Mono. 1,234.56 and every table figure.</p>
-            <p className="cds-label">cds-label. Small caps labels.</p>
+            <p className="cds-label">cds-label. The mono caps label.</p>
           </Section>
 
           <Section id="logo" title="Logo" note="The official mark. Its fills never change with the theme.">
             <Logo size={48} />
           </Section>
 
-          <Section id="buttons" title="Button" note="One style, two sizes. Icons go before the label.">
+          <Section id="buttons" title="Button" note="One style, three sizes: large for the header and heroes, the default inside cards and boxes, small in tables and filters. Icons go before the label.">
             <div className="sc-row">
+              <Button large>Get an API key</Button>
               <Button>How ranking works</Button>
               <Button small icon={<Download size={15} aria-hidden="true" />}>Export</Button>
               <Button small icon={<Columns3 size={15} aria-hidden="true" />}>

@@ -83,9 +83,29 @@ tokens in them rather than typing colours.
 | Notice | `notice-bg`, `notice-line`, `notice-ink` | The warning strip |
 | Tones | `tone-positive`, `tone-caution`, `tone-neutral`, `tone-critical`, each with `-bg` and `-ink` | Badges |
 | Faces | `font-serif`, `font-sans`, `font-mono` | Crimson Text, Figtree, IBM Plex Mono |
-| Shape | `radius`, `radius-plate`, `row-height` | Corners, the plate's leaf corner, table rows |
+| Shape | `radius`, `radius-button`, `radius-plate`, `row-height` | Corners, button corners, the plate's leaf corner, table rows |
 
 Every token is prefixed `--cds-`, for example `var(--cds-ink-muted)`.
+
+### Type scale
+
+The scale Brian and Joerg set in November 2026, in
+[`src/components/typography/typography.css`](src/components/typography/typography.css).
+One class per step. Put it on the element and set nothing else about its type.
+
+| Class | Face | Size / line | Weight | For |
+|---|---|---|---|---|
+| `cds-display` | Crimson Text | 72 / 76 | 600 | The hero on the main page only |
+| `cds-h1` | Crimson Text | 56 / 60 | 600 | Page headline |
+| `cds-h2` | Crimson Text | 44 / 50 | 600 | Section headline |
+| `cds-h3` | Crimson Text | 32 / 38 | 600 | Subsection headline |
+| `cds-h4` | Figtree | 24 / 32 | 600 | Above body-lg in a section |
+| `cds-h5` | Figtree | 18 / 24 | 600 | Card and box titles |
+| `cds-eyebrow` | Figtree, caps, 0.08em | 13 / 16 | 600 | The small label above a headline |
+| `cds-body-lg` | Figtree | 20 / 30 | 400 | Body copy in a section |
+| `cds-body` | Figtree | 16 / 24 | 400 | Cards and boxes |
+| `cds-body-sm` | Figtree | 14 / 20 | 400 | Labels, tables, meta |
+| `cds-label` | IBM Plex Mono, caps, 0.08em | 11 | 500 | Column headers, badges, running heads |
 
 ### Components
 
@@ -95,7 +115,7 @@ Every token is prefixed `--cds-`, for example `var(--cds-ink-muted)`.
 | | `PageHeader` | Page title on the brand block, a subtitle, and page actions |
 | | `Logo` | The official hexagon mark |
 | | `ThemeToggle`, `useTheme` | Dark and light, saved in the browser |
-| Controls | `Button`, `ButtonCount`, `buttonClass` | The one button style, in two sizes |
+| Controls | `Button`, `ButtonCount`, `buttonClass` | The one button style, in three sizes: `large` for the header and heroes, the default inside cards and boxes, `small` in tables and filters |
 | | `SegmentedControl` | Joined buttons where one is pressed |
 | | `SearchField` | Search input with a clear button |
 | | `Select` | A dropdown that always has a value |
