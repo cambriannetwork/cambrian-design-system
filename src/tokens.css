@@ -16,6 +16,7 @@
 
   /* Shape */
   --cds-radius: 4px;
+  --cds-radius-button: 12px;
   --cds-radius-plate: 12px 0 12px 0;
   --cds-row-height: 46px;
 

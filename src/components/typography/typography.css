@@ -1,6 +1,58 @@
-/* Typography. .cds-label is the mono caps label used across the system:
-   column headers, badge text, running heads. Use it for any small label. */
+/* Typography. The type scale Brian and Joerg set in November 2026, as
+   classes. Crimson Text carries section headlines; Figtree carries UI,
+   component titles and body copy. Put one class on an element and set
+   nothing else about its type. Colour stays with the element.
 
+   .cds-label is the mono caps label used across the data components:
+   column headers, badge text, running heads. .cds-eyebrow is the sans caps
+   label that sits above a headline. */
+
+/* Serif. Section headlines. */
+.cds-display {
+  /* The hero on the main page only. */
+  font: 600 72px / 76px var(--cds-font-serif);
+}
+.cds-h1 {
+  font: 600 56px / 60px var(--cds-font-serif);
+}
+.cds-h2 {
+  font: 600 44px / 50px var(--cds-font-serif);
+}
+.cds-h3 {
+  font: 600 32px / 38px var(--cds-font-serif);
+}
+
+/* Sans. UI and components. */
+.cds-h4 {
+  /* Above body-lg in a section. */
+  font: 600 24px / 32px var(--cds-font-sans);
+}
+.cds-h5 {
+  /* Card and box titles above body. */
+  font: 600 18px / 24px var(--cds-font-sans);
+}
+.cds-eyebrow {
+  /* The small uppercase label above a headline. */
+  font: 600 13px / 16px var(--cds-font-sans);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* Body. */
+.cds-body-lg {
+  /* Body copy in a section. */
+  font: 400 20px / 30px var(--cds-font-sans);
+}
+.cds-body {
+  /* Cards and boxes. */
+  font: 400 16px / 24px var(--cds-font-sans);
+}
+.cds-body-sm {
+  /* Labels, tables, meta. */
+  font: 400 14px / 20px var(--cds-font-sans);
+}
+
+/* The mono caps label. */
 .cds-label {
   font-family: var(--cds-font-mono);
   text-transform: uppercase;

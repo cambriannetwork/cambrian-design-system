@@ -1,10 +1,40 @@
-/* Button. The one button style, in two sizes. Menu and dialog triggers
-   use it through buttonClass(). */
+/* Button. The one button style, in three sizes: large for headers and
+   heroes, the default for cards and boxes, small for tables, filters and
+   inline actions. Menu and dialog triggers use it through buttonClass(). */
 
 .cds-button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  height: 40px;
+  padding-inline: 20px;
+  gap: 8px;
+  border-radius: var(--cds-radius-button);
+  border: 1px solid var(--cds-line-strong);
+  background: var(--cds-surface-control);
+  color: var(--cds-ink);
+  font: 600 14px / 20px var(--cds-font-sans);
+}
+
+.cds-button--large {
+  height: 48px;
+  padding-inline: 24px;
+  gap: 8px;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.cds-button--small {
+  height: 32px;
+  padding-inline: 14px;
+  gap: 6px;
+  font-size: 13px;
+  line-height: 16px;
+}
+
+.cds-button:hover {
+  border-color: var(--cds-action);
+  background: var(--cds-surface-hover);
 }
 
 .cds-button:disabled {
@@ -19,23 +49,4 @@
   letter-spacing: 0.08em;
   font-size: 11px;
   font-weight: 500;
-}
-
-.cds-button,
-.cds-button--small {
-  min-height: 32px;
-  padding: 0 12px;
-  border-radius: var(--cds-radius);
-  border: 1px solid var(--cds-line-strong);
-  background: var(--cds-surface-control);
-  color: var(--cds-ink);
-  font-family: var(--cds-font-sans);
-  font-size: 13px;
-  font-weight: 500;
-  gap: 7px;
-}
-
-.cds-button:hover {
-  border-color: var(--cds-action);
-  background: var(--cds-surface-hover);
 }

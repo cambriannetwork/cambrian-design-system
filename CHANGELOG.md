@@ -1,5 +1,25 @@
 # Changelog
 
+## 0.2.0 (2026-11-12)
+
+The typography and button standards Brian and Joerg finalized on 12 November
+2026, rolled into the system.
+
+- New: a type scale as classes, `cds-display`, `cds-h1` to `cds-h5`,
+  `cds-eyebrow`, `cds-body-lg`, `cds-body` and `cds-body-sm`. Crimson Text 600
+  for the serif steps, Figtree for the rest. `cds-label` is unchanged.
+- New: `--cds-radius-button`, 12px. Only buttons read it. `--cds-radius` stays
+  4px for fields, menus, chips and the rest.
+- Changed: `Button` follows the standard. The default is now 40px tall, 20px
+  side padding, 14px Figtree at weight 600, 12px corners. `small` is 32px tall,
+  14px padding, 13px. New `large` prop and `buttonClass({ large: true })`:
+  48px tall, 24px padding, 16px. Before this the two sizes were the same 32px,
+  13px at weight 500, with 4px corners, so every button in every product gets
+  taller and rounder. Nothing is renamed and no prop changes meaning, so no
+  product has to change code. Look at your buttons after you update.
+- Showcase: the type section lists every step of the scale; the button section
+  shows all three sizes.
+
 ## 0.1.1 (2026-09-23)
 
 - Fix: the font imports moved from base.css to the top of styles.css. Some

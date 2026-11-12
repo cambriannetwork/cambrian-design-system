@@ -1,19 +1,23 @@
 import type { ButtonHTMLAttributes, ReactNode } from 'react';
 
 type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
-  /** The compact size used in toolbars and page headers. */
+  /** The compact size for tables, filters and inline actions. */
   small?: boolean;
+  /** The large size for the header, a hero or a section's main action. */
+  large?: boolean;
   /** An icon drawn before the label. Mark it aria-hidden. */
   icon?: ReactNode;
 };
 
 /** The class a button uses. Pass it to a trigger that renders its own button. */
-export function buttonClass({ small = false }: { small?: boolean } = {}) {
-  return small ? 'cds-button cds-button--small' : 'cds-button';
+export function buttonClass({ small = false, large = false }: { small?: boolean; large?: boolean } = {}) {
+  if (small) return 'cds-button cds-button--small';
+  if (large) return 'cds-button cds-button--large';
+  return 'cds-button';
 }
 
-export function Button({ small = false, icon, children, type = 'button', className, ...rest }: ButtonProps) {
-  const base = buttonClass({ small });
+export function Button({ small = false, large = false, icon, children, type = 'button', className, ...rest }: ButtonProps) {
+  const base = buttonClass({ small, large });
   return (
     <button type={type} className={className ? `${base} ${className}` : base} {...rest}>
       {icon}
